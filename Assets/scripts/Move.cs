@@ -14,6 +14,18 @@ public class Move : MonoBehaviour
     private Vector2 m_Velocity = Vector2.zero;
     [SerializeField] [Range(0.05f, 0.3f)]
     private float m_MovementSmoothing = 0.1f;
+
+    public Speed
+    {
+        get
+        {
+            return speed;
+        }
+        set 
+        {
+            speed = value;
+        }
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
