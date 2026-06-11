@@ -14,7 +14,7 @@ public class SpeedControll : MonoBehaviour
     }
     private StateMachineType state = StateMachineType.Slow;
 
-    public findplayer()
+    public void findplayer()
     {
         player = GameObject.FindWithTag("Player").GetComponent<Move>();
     }
