@@ -81,7 +81,7 @@ public class Move : MonoBehaviour
         moveInput = move.ReadValue<Vector2>();
 
         if (jump.WasPressedThisFrame() == true 
-            && detectGround() == true)
+            && detectGround() == true && canJump == true)
         {
             jump_action();
         }
@@ -110,12 +110,16 @@ public class Move : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector2 targetVelocity =
+        if (canMove == true )
+        {
+            Vector2 targetVelocity =
         new Vector2(moveInput.x * speed * 10 * Time.fixedDeltaTime,
            rb.linearVelocity.y);
 
            rb.linearVelocity = Vector2.SmoothDamp(rb.linearVelocity,
            targetVelocity, ref m_Velocity, m_MovementSmoothing);
+        }
+        
     }
 }
 
