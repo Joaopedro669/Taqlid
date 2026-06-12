@@ -35,7 +35,6 @@ public class Move : MonoBehaviour
         move.Disable();
         jump.Disable();
     }
-     void Start()
      public float Speed
     {
         get
@@ -71,7 +70,7 @@ public class Move : MonoBehaviour
             canMove = value;
         }
     }
-
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         ground_pivot = transform.GetChild(0);
