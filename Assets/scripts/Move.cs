@@ -16,7 +16,26 @@ public class Move : MonoBehaviour
     [SerializeField] [Range(0.05f, 0.3f)]
     private float m_MovementSmoothing = 0.1f;
 
-    public float Speed
+    
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Awake()
+    {
+        playerinput = new InputSystem_Actions();
+    }
+    //move
+    void OnEnable()
+    {
+        move = playerinput.Player.Move;
+        move.Enable();
+        jump = playerinput.Player.Jump;
+        jump.Enable();
+    }
+     void OnDisable()
+    {
+        move.Disable();
+        jump.Disable();
+    }
+     public float Speed
     {
         get
         {
@@ -27,8 +46,8 @@ public class Move : MonoBehaviour
             speed = value;
         }
     }
-    private bool canMove;
-    private bool canJump;
+    private bool canMove = true;
+    private bool canJump = true;
     public bool CanJump
     {
         get
@@ -51,26 +70,7 @@ public class Move : MonoBehaviour
             canMove = value;
         }
     }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Awake()
-    {
-        playerinput = new InputSystem_Actions();
-    }
-    //move
-    void OnEnable()
-    {
-        move = playerinput.Player.Move;
-        move.Enable();
-        jump = playerinput.Player.Jump;
-        jump.Enable();
-    }
-     void OnDisable()
-    {
-        move.Disable();
-        jump.Disable();
-    }
-     void Start()
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         ground_pivot = transform.GetChild(0);
@@ -81,7 +81,7 @@ public class Move : MonoBehaviour
         moveInput = move.ReadValue<Vector2>();
 
         if (jump.WasPressedThisFrame() == true 
-            && detectGround() == true)
+            && detectGround() == true && canJump == true)
         {
             jump_action();
         }
@@ -110,12 +110,16 @@ public class Move : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector2 targetVelocity =
+        if (canMove == true )
+        {
+            Vector2 targetVelocity =
         new Vector2(moveInput.x * speed * 10 * Time.fixedDeltaTime,
            rb.linearVelocity.y);
 
            rb.linearVelocity = Vector2.SmoothDamp(rb.linearVelocity,
            targetVelocity, ref m_Velocity, m_MovementSmoothing);
+        }
+        
     }
 }
 
