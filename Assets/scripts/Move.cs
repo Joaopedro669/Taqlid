@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+
 public class Move : MonoBehaviour
 {
     private InputSystem_Actions playerinput;
@@ -15,7 +16,7 @@ public class Move : MonoBehaviour
     [SerializeField] [Range(0.05f, 0.3f)]
     private float m_MovementSmoothing = 0.1f;
 
-    public Speed
+    public float Speed
     {
         get
         {
@@ -26,6 +27,31 @@ public class Move : MonoBehaviour
             speed = value;
         }
     }
+    private bool canMove;
+    private bool canJump;
+    public bool CanJump
+    {
+        get
+        {
+            return canJump;
+        }
+        set 
+        {
+            canJump = value;
+        }
+    }
+    public bool CanMove
+    {
+        get
+        {
+            return canMove;
+        }
+        set
+        {
+            canMove = value;
+        }
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
