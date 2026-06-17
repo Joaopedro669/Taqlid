@@ -36,7 +36,10 @@ public class HP : MonoBehaviour
     void Morrer()
     {
         Debug.Log("O jogador morreu!");
-        gameObject.SetActive(false); 
+        gameObject.SetActive(false);
+
+        // LINHA NOVA: Para qualquer dano contínuo do gás na hora da morte
+        StopAllCoroutines(); 
     }
 }
 
