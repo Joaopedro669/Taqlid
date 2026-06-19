@@ -2,11 +2,13 @@ using UnityEngine;
 public class PlayerRespawn : HP
 {
     private Vector2 respawnPoint;
+    private GameObject player;
     private Rigidbody2D rb;
     public HP var;
     void Start()
     {
         // Define o ponto inicial da fase como o primeiro checkpoint
+        player = GameObject.FindWithTag("Player");
         respawnPoint = transform.position;
         rb = GetComponent<Rigidbody2D>();
         var = GetComponent<HP>();
@@ -18,9 +20,7 @@ public class PlayerRespawn : HP
             
             Respawn();
             var.HPAtual = var.HPTotal;
-        }
-        
-            
+        }      
     }
 
     // Chamado quando o jogador bate em um Checkpoint
