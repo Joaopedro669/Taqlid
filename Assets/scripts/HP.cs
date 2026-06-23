@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro; // Importa o TextMeshPro
 
 public class HP : MonoBehaviour 
@@ -15,11 +15,17 @@ public class HP : MonoBehaviour
         AtualizarUI(); 
     } 
 
-    public void perderHP (int QuantidadedeDano) 
-    { 
-        HPAtual -= QuantidadedeDano; 
-        AtualizarUI(); 
-    } 
+    public void perderHP (int QuantidadedeDano)
+    {
+        HPAtual -= QuantidadedeDano;
+        AtualizarUI();
+
+        // Se a vida zerar, ele morre. Se n�o zerar, ele N�O faz nada e fica no lugar!
+        if (HPAtual <= 0)
+        {
+            Morrer();
+        }
+    }
 
     void AtualizarUI() 
     { 
@@ -32,7 +38,10 @@ public class HP : MonoBehaviour
     void Morrer() 
     { 
         Debug.Log("O jogador morreu!"); 
-        gameObject.SetActive(false); 
+        gameObject.SetActive(false);
+        
+        // LINHA NOVA: Para qualquer dano contínuo do gás na hora da morte
+        //StopAllCoroutines();
     } 
 }
 
