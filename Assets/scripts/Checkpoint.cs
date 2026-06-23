@@ -9,7 +9,7 @@ public class CheckpointSingle : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             // Pega o componente PlayerRespawn que está no jogador
-            PlayerRespawn playerRespawn = collision.GetComponent<PlayerRespawn>();
+            HP playerRespawn = collision.GetComponent<HP>();
             
             if (playerRespawn != null)
             {
