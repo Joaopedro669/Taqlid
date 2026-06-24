@@ -1,40 +1,34 @@
 ﻿using UnityEngine;
-using TMPro; // Importa o TextMeshPro
+using TMPro;
 
 public class HP : MonoBehaviour 
 {
     private Vector2 respawnPoint;
     private Rigidbody2D rb;
-    private bool estaMorto = false; // Evita que o jogador morra duas vezes seguidas no mesmo frame
+    private bool estaMorto = false;
 
     [Header("Configurações de HP")]
     public int HPTotal = 3;
     public int HPAtual;
 
     [Header("Configurações de Vidas Extras")]
-    public int vidasExtrasTotais = 3; // Começa com 3 vidas extras
     private int vidasExtrasAtuais;
 
     [Header("Componentes de UI")]
     public TextMeshProUGUI textoHP;
-    public TextMeshProUGUI textoVidas; // Arraste o texto das vidas aqui no Unity
+    public TextMeshProUGUI textoVidas;
 
-void Start() 
-{
-    HPAtual = HPTotal;
-    
-    // Força o jogo a ter exatamente 2 vidas extras na reserva.
-    // Assim: Vida Inicial (1) + Vidas Extras (2) = 3 tentativas no total!
-    vidasExtrasAtuais = 2; 
-    
-    estaMorto = false;
-    
-    AtualizarUI();
-    
-    respawnPoint = transform.position;
-    rb = GetComponent<Rigidbody2D>();
-}
-
+    void Start() 
+    {
+        HPAtual = HPTotal;
+        vidasExtrasAtuais = 2; // Mantém a correção das 3 tentativas totais
+        estaMorto = false;
+        
+        AtualizarUI();
+        
+        respawnPoint = transform.position;
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     public void UpdateRespawnPoint(Vector2 newPosition) 
     {
@@ -43,14 +37,11 @@ void Start()
 
     public void perderHP(int QuantidadedeDano) 
     {
-        // Se o jogador já está no processo de morte, ignora novos danos
         if (estaMorto) return;
 
-        // Reduz o HP e impede que ele fique negativo
         HPAtual = Mathf.Max(0, HPAtual - QuantidadedeDano);
         AtualizarUI();
 
-        // Se o HP zerar, chama a lógica de morte
         if (HPAtual <= 0) 
         {
             Morrer();
@@ -72,18 +63,16 @@ void Start()
 
     void Morrer() 
     {
-        estaMorto = true; // Bloqueia outras chamadas de dano/morte imediatas
+        estaMorto = true;
         Debug.Log("O jogador perdeu todo o HP!");
 
-        // Se ele não tem mais vidas extras (está em 0), Game Over direto sem tirar nada
         if (vidasExtrasAtuais <= 0) 
         {
             GameOver();
         } 
-        // Se ele tem vidas extras (3, 2 ou 1), ele gasta uma e renasce
         else 
         {
-            vidasExtrasAtuais--; // Perde 1 vida extra
+            vidasExtrasAtuais--;
             AtualizarUI();
             Respawn();
         }
@@ -91,37 +80,29 @@ void Start()
 
     public void Respawn() 
     {
-        Debug.Log("Executando Respawn");
+        TeleportarParaCheckpoint();
         
+        // Restaura o HP completo porque ele gastou uma vida extra
+        HPAtual = HPTotal; 
+        AtualizarUI();
+        
+        estaMorto = false; 
+    }
+
+    // Nova função: Apenas move o jogador de volta sem resetar o HP dele
+    public void TeleportarParaCheckpoint()
+    {
         if (rb != null) 
         {
             rb.linearVelocity = Vector2.zero;
         }
-        
         transform.position = respawnPoint;
-        
-        // Restaura o HP para o valor total
-        HPAtual = HPTotal; 
-        AtualizarUI();
-        
-        // Libera o jogador para tomar dano novamente
-        estaMorto = false; 
     }
 
     void GameOver()
     {
-        Debug.Log("Game Over! O jogador perdeu todas as vidas extras e não irá mais respawnar.");
-        
-        // Desativa o jogador na tela para ele sumir em vez de respawnar
+        Debug.Log("Game Over!");
         gameObject.SetActive(false); 
     }
-
-    private void OnTriggerEnter2D(Collider2D collision) 
-    {
-        // Se cair no abismo, aciona a perda de HP direto
-        if (collision.CompareTag("FallDetector")) 
-        {
-            perderHP(HPAtual); 
-        }
-    }
 }
+
