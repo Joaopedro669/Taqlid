@@ -8,7 +8,7 @@ public class HP : MonoBehaviour
     private bool estaMorto = false;
 
     [Header("Configurações de HP")]
-    public int HPTotal = 3;
+    public int HPTotal = 4;
     public int HPAtual;
 
     [Header("Configurações de Vidas Extras")]
