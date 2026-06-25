@@ -1,45 +1,93 @@
-using UnityEngine;
-using UnityEngine.UI;
-public class HP : MonoBehaviour
-{
-    public int HPTotal = 3;
-    private int HPAtual;
+ï»¿using UnityEngine;
+using TMPro; // Importa o TextMeshPro
 
-    public Text textoHP; 
+public class HP : MonoBehaviour 
+{ 
+    private Vector2 respawnPoint;
+    private GameObject player;
+    private Rigidbody2D rb;
+    public HP var;
+    public int HPTotal = 3; 
+    public int HPAtual; 
+    
+    // Substitui o Text antigo pelo componente do TextMeshPro
+    public TextMeshProUGUI textoHP; 
 
-    void Start()
+    void Start() 
+    { 
+        HPAtual = HPTotal; 
+        AtualizarUI(); 
+        // Define o ponto inicial da fase como o primeiro checkpoint
+        respawnPoint = transform.position;
+        rb = GetComponent<Rigidbody2D>();
+        var = GetComponent<HP>();
+    } 
+    void FixedUpdate()
     {
-        HPAtual = HPTotal;
-        AtualizarUI();
+        if(HPAtual <= 0)
+        {
+            
+            Respawn();
+            HPAtual = var.HPTotal;
+        }      
     }
-
+    public void UpdateRespawnPoint(Vector2 newPosition)
+    {
+        respawnPoint = newPosition;
+    }
     public void perderHP (int QuantidadedeDano)
     {
         HPAtual -= QuantidadedeDano;
         AtualizarUI();
 
-        // Se a vida zerar, ele morre. Se não zerar, ele NÃO faz nada e fica no lugar!
+        // Se a vida zerar, ele morre. Se nï¿½o zerar, ele Nï¿½O faz nada e fica no lugar!
         if (HPAtual <= 0)
         {
             Morrer();
         }
     }
 
-    void AtualizarUI()
+    void AtualizarUI() 
+    { 
+        if (textoHP != null) 
+        { 
+            textoHP.text = "HP Restante: " + HPAtual; 
+        } 
+    } 
+
+    void Morrer() 
+    { 
+        Debug.Log("O jogador morreu!"); 
+        
+        
+        // LINHA NOVA: Para qualquer dano contÃ­nuo do gÃ¡s na hora da morte
+        //StopAllCoroutines();
+    } 
+    // Chamado quando o jogador morre ou cai em um abismo
+    public void Respawn()
     {
-        if (textoHP != null)
+        Debug.Log("Morreu");
+        // Zera a velocidade para nï¿½o voltar 'voando'
+        if (rb != null)
         {
-            textoHP.text = "HP Restante: " + HPAtual;
+            rb.linearVelocity = Vector2.zero;
+        }
+
+        // Teleporta o jogador para o Ultimo checkpoint
+        transform.position = respawnPoint;
+        Debug.Log("Morreu a");
+
+        // Se vocï¿½ estiver usando Cinemachine, pode precisar resetar a cï¿½mera aqui para nï¿½o dar 'teleporte visual'
+    }
+
+    // Exemplo: morre ao cair em um abismo (Trigger com tag "FallDetector")
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("FallDetector"))
+        {
+            Respawn();
         }
     }
-
-    void Morrer()
-    {
-        Debug.Log("O jogador morreu!");
-        gameObject.SetActive(false);
-
-        // LINHA NOVA: Para qualquer dano contínuo do gás na hora da morte
-        StopAllCoroutines(); 
-    }
 }
+
 
