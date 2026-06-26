@@ -89,7 +89,6 @@ public class HP : MonoBehaviour
         estaMorto = false; 
     }
 
-    // Nova função: Apenas move o jogador de volta sem resetar o HP dele
     public void TeleportarParaCheckpoint()
     {
         if (rb != null) 

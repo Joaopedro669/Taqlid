@@ -18,7 +18,7 @@ public class CheckpointSingle : MonoBehaviour
             
             if (playerRespawn != null)
             {
-                // Atualiza o ponto de respawn com a posição deste checkpoint
+                // Atualiza o ponto de respawn com a posição deste checkpoints
                 playerRespawn.UpdateRespawnPoint(transform.position);
 
                 // Bloqueia este checkpoint para sempre

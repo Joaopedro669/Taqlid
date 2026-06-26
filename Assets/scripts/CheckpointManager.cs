@@ -51,7 +51,7 @@ public class CheckpointManager : MonoBehaviour
     {
         if (!HasSavedCheckpoint()) return;
 
-        // Só aplica se estiver na cena correta
+        // Só aplica se estiver na cena corretas
         if (SceneManager.GetActiveScene().name != GetSavedScene()) return;
 
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
