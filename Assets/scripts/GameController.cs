@@ -34,6 +34,11 @@ public class GameController : MonoBehaviour
             if(InGasTime >= DamagePeriod)
             {
                 Debug.Log("Passou " + InicialDamagePeriod + " Segundos...........................");
+                if(player.GetComponent<Move>().IsHide == false)
+                {
+                    player.GetComponent<HP>().HPAtual --;
+                    Debug.Log("Player levou 1 de dano do gás");
+                }
                 DamagePeriod += InicialDamagePeriod;
             }
         }

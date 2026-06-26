@@ -6,6 +6,7 @@ public class Move : MonoBehaviour
     private InputSystem_Actions playerinput;
     private InputAction move;
     private InputAction jump;
+    private InputAction interact;
     private Vector2 moveInput;
     private Rigidbody2D rb;
     [SerializeField] private float speed = 17;
@@ -15,7 +16,8 @@ public class Move : MonoBehaviour
     private Vector2 m_Velocity = Vector2.zero;
     [SerializeField] [Range(0.05f, 0.3f)]
     private float m_MovementSmoothing = 0.1f;
-
+    private GameObject Hide;
+    public bool IsHide = false;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -29,11 +31,14 @@ public class Move : MonoBehaviour
         move.Enable();
         jump = playerinput.Player.Jump;
         jump.Enable();
+        interact = playerinput.Player.Interact;
+        interact.Enable();
     }
      void OnDisable()
     {
         move.Disable();
         jump.Disable();
+        interact.Disable();
     }
      public float Speed
     {
@@ -74,6 +79,7 @@ public class Move : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         ground_pivot = transform.GetChild(0);
+        Hide = GameObject.FindWithTag("HideSpot");
     }
     // Update is called once per frame
     void Update()
@@ -85,6 +91,7 @@ public class Move : MonoBehaviour
         {
             jump_action();
         }
+
     }
      private bool detectGround()
     {
@@ -119,6 +126,10 @@ public class Move : MonoBehaviour
            rb.linearVelocity = Vector2.SmoothDamp(rb.linearVelocity,
            targetVelocity, ref m_Velocity, m_MovementSmoothing);
         }
+        
+    }
+    void Esconder()
+    {
         
     }
 }
