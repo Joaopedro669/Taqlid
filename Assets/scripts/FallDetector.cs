@@ -2,12 +2,32 @@ using UnityEngine;
 
 public class FallDetector : MonoBehaviour
 {
-    // Cor da linha que vai aparecer apenas no editor da Unity
     [SerializeField] private Color debugColor = Color.red;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Verifica se quem caiu no abismo foi o jogador
+        if (collision.CompareTag("Player"))
+        {
+            HP jogadorHP = collision.GetComponent<HP>();
+
+            if (jogadorHP != null)
+            {
+                // Tira apenas 1 de HP do jogador
+                jogadorHP.perderHP(1);
+
+                // Se o jogador NÃO morreu (ainda tem HP sobrando),
+                // apenas teleporta ele de volta para o checkpoint
+                if (jogadorHP.HPAtual > 0)
+                {
+                    jogadorHP.TeleportarParaCheckpoint();
+                }
+            }
+        }
+    }
 
     private void OnDrawGizmos()
     {
-        // Desenha uma caixa vermelha no Editor para você ver o tamanho do abismo
         BoxCollider2D box = GetComponent<BoxCollider2D>();
         if (box != null)
         {
@@ -17,3 +37,4 @@ public class FallDetector : MonoBehaviour
         }
     }
 }
+
