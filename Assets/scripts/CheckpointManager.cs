@@ -5,21 +5,48 @@ public class CheckpointManager : MonoBehaviour
 {
     public static CheckpointManager Instance { get; private set; }
 
-    private const string KEY_X     = "checkpoint_x";
-    private const string KEY_Y     = "checkpoint_y";
-    private const string KEY_SCENE = "checkpoint_scene";
+    private const string KEY_X      = "checkpoint_x";
+    private const string KEY_Y      = "checkpoint_y";
+    private const string KEY_SCENE  = "checkpoint_scene";
     private const string KEY_EXISTS = "checkpoint_exists";
+
+    // Garante que o CheckpointManager exista desde o início do jogo,
+    // mesmo sem precisar colocar o prefab manualmente em cada cena.
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    private static void Bootstrap()
+    {
+        if (Instance != null) return;
+
+        GameObject go = new GameObject("CheckpointManager");
+        go.AddComponent<CheckpointManager>();
+    }
 
     void Awake()
     {
-        if (Instance != null) { Destroy(gameObject); return; }
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
 
-    void Start()
+    void OnEnable()
     {
-        // Assim que a cena carrega, aplica o checkpoint salvo ao jogador
+        // Reaplica o checkpoint TODA vez que uma cena é carregada
+        // (e não só na primeira vez, como Start() faria sozinho).
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
         ApplyCheckpointToPlayer();
     }
 
@@ -31,6 +58,7 @@ public class CheckpointManager : MonoBehaviour
         PlayerPrefs.SetString(KEY_SCENE, SceneManager.GetActiveScene().name);
         PlayerPrefs.SetInt(KEY_EXISTS, 1);
         PlayerPrefs.Save();
+
         Debug.Log($"Checkpoint salvo: {position} na cena {SceneManager.GetActiveScene().name}");
     }
 
@@ -51,7 +79,7 @@ public class CheckpointManager : MonoBehaviour
     {
         if (!HasSavedCheckpoint()) return;
 
-        // Só aplica se estiver na cena corretas
+        // Só aplica se estiver na cena correta
         if (SceneManager.GetActiveScene().name != GetSavedScene()) return;
 
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
@@ -74,10 +102,10 @@ public class CheckpointManager : MonoBehaviour
     // Apaga o save (para o botão "Novo Jogo")
     public static void ClearCheckpoint()
     {
-        PlayerPrefs.DeleteKey("checkpoint_x");
-        PlayerPrefs.DeleteKey("checkpoint_y");
-        PlayerPrefs.DeleteKey("checkpoint_scene");
-        PlayerPrefs.DeleteKey("checkpoint_exists");
+        PlayerPrefs.DeleteKey(KEY_X);
+        PlayerPrefs.DeleteKey(KEY_Y);
+        PlayerPrefs.DeleteKey(KEY_SCENE);
+        PlayerPrefs.DeleteKey(KEY_EXISTS);
         PlayerPrefs.Save();
     }
 }

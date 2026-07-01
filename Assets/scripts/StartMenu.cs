@@ -36,26 +36,27 @@ public class StartMenu : MonoBehaviour
     {
         string savedScene = PlayerPrefs.GetString("checkpoint_scene", "SampleScene");
         SceneManager.LoadScene(savedScene);
-        // O CheckpointManager.Start() reposiciona o jogador automaticamente
+        // O CheckpointManager reaplica a posição automaticamente ao carregar a cena
     }
 
     public void Config()
     {
         SceneManager.LoadScene("Config");
     }
-    
+
     public void Credits()
     {
         SceneManager.LoadScene("Creditos");
     }
-    
+
     public void Return()
     {
         SceneManager.LoadScene("Menu");
     }
-    
+
     public void ExitGame()
     {
         Application.Quit();
     }
 }
+

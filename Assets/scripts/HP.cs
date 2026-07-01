@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
-public class HP : MonoBehaviour 
+public class HP : MonoBehaviour
 {
     private Vector2 respawnPoint;
     private Rigidbody2D rb;
@@ -18,59 +19,59 @@ public class HP : MonoBehaviour
     public TextMeshProUGUI textoHP;
     public TextMeshProUGUI textoVidas;
 
-    void Start() 
+    void Start()
     {
         HPAtual = HPTotal;
         vidasExtrasAtuais = 2; // Mantém a correção das 3 tentativas totais
         estaMorto = false;
-        
+
         AtualizarUI();
-        
+
         respawnPoint = transform.position;
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public void UpdateRespawnPoint(Vector2 newPosition) 
+    public void UpdateRespawnPoint(Vector2 newPosition)
     {
         respawnPoint = newPosition;
     }
 
-    public void perderHP(int QuantidadedeDano) 
+    public void perderHP(int QuantidadedeDano)
     {
         if (estaMorto) return;
 
         HPAtual = Mathf.Max(0, HPAtual - QuantidadedeDano);
         AtualizarUI();
 
-        if (HPAtual <= 0) 
+        if (HPAtual <= 0)
         {
             Morrer();
         }
     }
 
-    void AtualizarUI() 
+    void AtualizarUI()
     {
-        if (textoHP != null) 
+        if (textoHP != null)
         {
             textoHP.text = "HP Restante: " + HPAtual;
         }
-        
-        if (textoVidas != null) 
+
+        if (textoVidas != null)
         {
             textoVidas.text = "Vidas Extras: " + vidasExtrasAtuais;
         }
     }
 
-    void Morrer() 
+    void Morrer()
     {
         estaMorto = true;
         Debug.Log("O jogador perdeu todo o HP!");
 
-        if (vidasExtrasAtuais <= 0) 
+        if (vidasExtrasAtuais <= 0)
         {
             GameOver();
-        } 
-        else 
+        }
+        else
         {
             vidasExtrasAtuais--;
             AtualizarUI();
@@ -78,20 +79,20 @@ public class HP : MonoBehaviour
         }
     }
 
-    public void Respawn() 
+    public void Respawn()
     {
         TeleportarParaCheckpoint();
-        
+
         // Restaura o HP completo porque ele gastou uma vida extra
-        HPAtual = HPTotal; 
+        HPAtual = HPTotal;
         AtualizarUI();
-        
-        estaMorto = false; 
+
+        estaMorto = false;
     }
 
     public void TeleportarParaCheckpoint()
     {
-        if (rb != null) 
+        if (rb != null)
         {
             rb.linearVelocity = Vector2.zero;
         }
@@ -101,7 +102,6 @@ public class HP : MonoBehaviour
     void GameOver()
     {
         Debug.Log("Game Over!");
-        gameObject.SetActive(false); 
+        SceneManager.LoadScene("Menu");
     }
 }
-
