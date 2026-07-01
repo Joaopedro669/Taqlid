@@ -1,0 +1,897 @@
+fileFormatVersion: 2
+guid: 3a5b1e4b036e8d64e895e2639bbd7e01
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3590934193252215011
+    second: atlas-taqlid_TRANSP_0
+  - first:
+      213: -7818245355348763050
+    second: atlas-taqlid_TRANSP_1
+  - first:
+      213: -1342485275579861186
+    second: atlas-taqlid_TRANSP_2
+  - first:
+      213: -5793273894009919696
+    second: atlas-taqlid_TRANSP_3
+  - first:
+      213: 4432830955339107732
+    second: atlas-taqlid_TRANSP_4
+  - first:
+      213: -8018959438024576997
+    second: atlas-taqlid_TRANSP_5
+  - first:
+      213: -3261745018057604804
+    second: atlas-taqlid_TRANSP_6
+  - first:
+      213: 4443735973803099893
+    second: atlas-taqlid_TRANSP_7
+  - first:
+      213: -7863233770942204576
+    second: atlas-taqlid_TRANSP_8
+  - first:
+      213: -7419852734461646218
+    second: atlas-taqlid_TRANSP_9
+  - first:
+      213: -3485308623823227910
+    second: atlas-taqlid_TRANSP_10
+  - first:
+      213: -1592719794911658530
+    second: atlas-taqlid_TRANSP_11
+  - first:
+      213: -4026037988155890121
+    second: atlas-taqlid_TRANSP_12
+  - first:
+      213: 1450776010244044992
+    second: atlas-taqlid_TRANSP_13
+  - first:
+      213: -337159849425008740
+    second: atlas-taqlid_TRANSP_14
+  - first:
+      213: 4762822694101207616
+    second: atlas-taqlid_TRANSP_15
+  - first:
+      213: 6362409831420319336
+    second: atlas-taqlid_TRANSP_16
+  - first:
+      213: -473244785194709266
+    second: atlas-taqlid_TRANSP_17
+  - first:
+      213: 1312011832877573672
+    second: atlas-taqlid_TRANSP_18
+  - first:
+      213: -5476759219898056969
+    second: atlas-taqlid_TRANSP_19
+  - first:
+      213: -6929234848375753196
+    second: atlas-taqlid_TRANSP_20
+  - first:
+      213: 6859562976953785183
+    second: atlas-taqlid_TRANSP_21
+  - first:
+      213: -3876902005443641754
+    second: atlas-taqlid_TRANSP_22
+  - first:
+      213: -117842816250472881
+    second: atlas-taqlid_TRANSP_23
+  - first:
+      213: 3102038117245194225
+    second: atlas-taqlid_TRANSP_24
+  - first:
+      213: 5453742264363962631
+    second: atlas-taqlid_TRANSP_25
+  - first:
+      213: -2540692904369701620
+    second: atlas-taqlid_TRANSP_26
+  - first:
+      213: -7075396730169242994
+    second: atlas-taqlid_TRANSP_27
+  - first:
+      213: -8683667521884504711
+    second: atlas-taqlid_TRANSP_28
+  - first:
+      213: -1452029816660132005
+    second: atlas-taqlid_TRANSP_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1875
+        width: 123
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e82a988f9f85d130800000000000000
+      internalID: 3590934193252215011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_1
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 1875
+        width: 124
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65ed69ba543008390800000000000000
+      internalID: -7818245355348763050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_2
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 1879
+        width: 118
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e37bed031c88e5de0800000000000000
+      internalID: -1342485275579861186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_3
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 1875
+        width: 99
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 037aef466182a9fa0800000000000000
+      internalID: -5793273894009919696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_4
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 1879
+        width: 126
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49dc75a8444948d30800000000000000
+      internalID: 4432830955339107732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_5
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 1905
+        width: 121
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b10774c90eee6b090800000000000000
+      internalID: -8018959438024576997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_6
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 1889
+        width: 28
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c31c6c20034fbb2d0800000000000000
+      internalID: -3261745018057604804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_7
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 1878
+        width: 70
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f6882203525bad30800000000000000
+      internalID: 4443735973803099893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_8
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 1755
+        width: 104
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0657229eb8e20e290800000000000000
+      internalID: -7863233770942204576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_9
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 1767
+        width: 123
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67ae3b40043670990800000000000000
+      internalID: -7419852734461646218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_10
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 1751
+        width: 53
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af33968c542b1afc0800000000000000
+      internalID: -3485308623823227910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_11
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 1748
+        width: 128
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eddbe8df8c585e9e0800000000000000
+      internalID: -1592719794911658530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_12
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1752
+        width: 113
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7366db7d7c3a028c0800000000000000
+      internalID: -4026037988155890121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_13
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 1753
+        width: 92
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c831434811322410800000000000000
+      internalID: 1450776010244044992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_14
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 1750
+        width: 92
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c978f7e37ea225bf0800000000000000
+      internalID: -337159849425008740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_15
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 1754
+        width: 115
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04a421a7102f81240800000000000000
+      internalID: 4762822694101207616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_16
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1625
+        width: 118
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 866d24d3802db4850800000000000000
+      internalID: 6362409831420319336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_17
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 1625
+        width: 118
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeec9ae0062be69f0800000000000000
+      internalID: -473244785194709266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_18
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 1627
+        width: 116
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 826e6c78fc3353210800000000000000
+      internalID: 1312011832877573672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_19
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 1506
+        width: 74
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fe71a1b184aef3b0800000000000000
+      internalID: -5476759219898056969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_20
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 1624
+        width: 249
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4163e493e9966df90800000000000000
+      internalID: -6929234848375753196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_21
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 1627
+        width: 126
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5b50cb1f20123f50800000000000000
+      internalID: 6859562976953785183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_22
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 1625
+        width: 118
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66e3880ba2a723ac0800000000000000
+      internalID: -3876902005443641754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_23
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 1626
+        width: 125
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f461f0e35965d5ef0800000000000000
+      internalID: -117842816250472881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_24
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1513
+        width: 84
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ff0f1a7b37ac0b20800000000000000
+      internalID: 3102038117245194225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_25
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 1509
+        width: 87
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 701d2fbb1b59fab40800000000000000
+      internalID: 5453742264363962631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_26
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 1464
+        width: 103
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0d30bfb345adbcd0800000000000000
+      internalID: -2540692904369701620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_27
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 1503
+        width: 122
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8a4d4539242fcd90800000000000000
+      internalID: -7075396730169242994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_28
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 1503
+        width: 124
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97d3a7a956a6d7780800000000000000
+      internalID: -8683667521884504711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-taqlid_TRANSP_29
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 1501
+        width: 122
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5f72be239a59dbe0800000000000000
+      internalID: -1452029816660132005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      atlas-taqlid_TRANSP_0: 3590934193252215011
+      atlas-taqlid_TRANSP_1: -7818245355348763050
+      atlas-taqlid_TRANSP_10: -3485308623823227910
+      atlas-taqlid_TRANSP_11: -1592719794911658530
+      atlas-taqlid_TRANSP_12: -4026037988155890121
+      atlas-taqlid_TRANSP_13: 1450776010244044992
+      atlas-taqlid_TRANSP_14: -337159849425008740
+      atlas-taqlid_TRANSP_15: 4762822694101207616
+      atlas-taqlid_TRANSP_16: 6362409831420319336
+      atlas-taqlid_TRANSP_17: -473244785194709266
+      atlas-taqlid_TRANSP_18: 1312011832877573672
+      atlas-taqlid_TRANSP_19: -5476759219898056969
+      atlas-taqlid_TRANSP_2: -1342485275579861186
+      atlas-taqlid_TRANSP_20: -6929234848375753196
+      atlas-taqlid_TRANSP_21: 6859562976953785183
+      atlas-taqlid_TRANSP_22: -3876902005443641754
+      atlas-taqlid_TRANSP_23: -117842816250472881
+      atlas-taqlid_TRANSP_24: 3102038117245194225
+      atlas-taqlid_TRANSP_25: 5453742264363962631
+      atlas-taqlid_TRANSP_26: -2540692904369701620
+      atlas-taqlid_TRANSP_27: -7075396730169242994
+      atlas-taqlid_TRANSP_28: -8683667521884504711
+      atlas-taqlid_TRANSP_29: -1452029816660132005
+      atlas-taqlid_TRANSP_3: -5793273894009919696
+      atlas-taqlid_TRANSP_4: 4432830955339107732
+      atlas-taqlid_TRANSP_5: -8018959438024576997
+      atlas-taqlid_TRANSP_6: -3261745018057604804
+      atlas-taqlid_TRANSP_7: 4443735973803099893
+      atlas-taqlid_TRANSP_8: -7863233770942204576
+      atlas-taqlid_TRANSP_9: -7419852734461646218
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
