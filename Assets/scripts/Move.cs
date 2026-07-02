@@ -10,7 +10,7 @@ public class Move : MonoBehaviour
     private Vector2 moveInput;
     private Rigidbody2D rb;
 
-    [SerializeField] public float speed = 17;
+    [SerializeField] private float speed = 17;
     [SerializeField] private float jforce = 10;
     private Transform ground_pivot;
     [SerializeField] private LayerMask ground_layer;
@@ -19,8 +19,15 @@ public class Move : MonoBehaviour
     private GameObject Hide;
     public bool IsHide = false;
 
-    // NOVO: Variável para controlar a imunidade ao gás
+    // Variável para controlar a imunidade ao gás
     public bool IsImmuneToGas = false; 
+
+    [Header("Configurações dos Lasers de Parede")]
+    [SerializeField] private Transform wallDetectorHead;   // Arraste o objeto da Cabeça aqui
+    [SerializeField] private Transform wallDetectorCenter; // Arraste o objeto do Centro aqui
+    [SerializeField] private Transform wallDetectorFoot;   // Arraste o objeto do Pé aqui
+    [SerializeField] private LayerMask blocoProtecaoLayer;  // Selecione a layer "ProtecaoGas"
+    [SerializeField] private float laserLength = 0.5f;      // Comprimento curto, pois sai da borda/centro do player
 
     void Awake()
     {
@@ -54,7 +61,6 @@ public class Move : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         ground_pivot = transform.GetChild(0);
-        Hide = GameObject.FindWithTag("HideSpot");
     }
 
     void Update()
@@ -66,30 +72,76 @@ public class Move : MonoBehaviour
             jump_action();
         }
 
-        // NOVO: Verifica se apertou a tecla de interação (E)
+        // Verifica se apertou E
         if (interact.WasPressedThisFrame())
         {
-            ToggleGasImmunity();
+            if (IsImmuneToGas)
+            {
+                ToggleGasImmunity(false);
+            }
+            else if (DetectarBlocoProtecao())
+            {
+                ToggleGasImmunity(true);
+            }
+            else
+            {
+                Debug.Log("Você precisa estar encostado em um bloco de proteção!");
+            }
+        }
+
+        // Se perder o contato com o bloco enquanto estiver imune, cancela o efeito automaticamente
+        if (IsImmuneToGas && !DetectarBlocoProtecao())
+        {
+            ToggleGasImmunity(false);
         }
     }
 
-    // NOVO: Função que ativa/desativa a imunidade e congela o player
-    void ToggleGasImmunity()
+    // Função que dispara os 3 pares de lasers (Cabeça, Centro e Pé)
+    private bool DetectarBlocoProtecao()
     {
-        IsImmuneToGas = !IsImmuneToGas;
+        // Garante que os componentes foram atribuídos no Inspector para evitar erros
+        if (wallDetectorHead == null || wallDetectorCenter == null || wallDetectorFoot == null) return false;
+
+        // Dispara raios para a Direita a partir dos 3 pontos
+        RaycastHit2D hitHeadR = Physics2D.Raycast(wallDetectorHead.position, Vector2.right, laserLength, blocoProtecaoLayer);
+        RaycastHit2D hitCenterR = Physics2D.Raycast(wallDetectorCenter.position, Vector2.right, laserLength, blocoProtecaoLayer);
+        RaycastHit2D hitFootR = Physics2D.Raycast(wallDetectorFoot.position, Vector2.right, laserLength, blocoProtecaoLayer);
+
+        // Dispara raios para a Esquerda a partir dos 3 pontos
+        RaycastHit2D hitHeadL = Physics2D.Raycast(wallDetectorHead.position, Vector2.left, laserLength, blocoProtecaoLayer);
+        RaycastHit2D hitCenterL = Physics2D.Raycast(wallDetectorCenter.position, Vector2.left, laserLength, blocoProtecaoLayer);
+        RaycastHit2D hitFootL = Physics2D.Raycast(wallDetectorFoot.position, Vector2.left, laserLength, blocoProtecaoLayer);
+
+        // Desenha os lasers visuais na aba Scene (Verde se bater no bloco, Vermelho se não bater)
+        Debug.DrawRay(wallDetectorHead.position, Vector2.right * laserLength, hitHeadR.collider ? Color.green : Color.red);
+        Debug.DrawRay(wallDetectorCenter.position, Vector2.right * laserLength, hitCenterR.collider ? Color.green : Color.red);
+        Debug.DrawRay(wallDetectorFoot.position, Vector2.right * laserLength, hitFootR.collider ? Color.green : Color.red);
+        
+        Debug.DrawRay(wallDetectorHead.position, Vector2.left * laserLength, hitHeadL.collider ? Color.green : Color.red);
+        Debug.DrawRay(wallDetectorCenter.position, Vector2.left * laserLength, hitCenterL.collider ? Color.green : Color.red);
+        Debug.DrawRay(wallDetectorFoot.position, Vector2.left * laserLength, hitFootL.collider ? Color.green : Color.red);
+
+        // Retorna verdadeiro se QUALQUER um dos 6 lasers encontrar o bloco correto
+        return (hitHeadR.collider != null || hitCenterR.collider != null || hitFootR.collider != null ||
+                hitHeadL.collider != null || hitCenterL.collider != null || hitFootL.collider != null);
+    }
+
+    void ToggleGasImmunity(bool ativar)
+    {
+        IsImmuneToGas = ativar;
 
         if (IsImmuneToGas)
         {
-            // Fica sem poder se mexer
             canMove = false;
             canJump = false;
-            rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y); // Para o player horizontalmente
+            rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+            Debug.Log("Imunidade ativada junto ao bloco protetor!");
         }
         else
         {
-            // Volta a se mexer
             canMove = true;
             canJump = true;
+            Debug.Log("Imunidade desativada.");
         }
     }
 
