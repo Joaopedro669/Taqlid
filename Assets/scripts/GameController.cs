@@ -9,13 +9,22 @@ public class GameController : MonoBehaviour
     [SerializeField] private float GasDuration = 30f;
     [SerializeField] private float DamagePeriod = 10f;
     [SerializeField] private float InicialDamagePeriod = 0f;
-    private GameObject player; 
+    private GameObject player;
+
+    // NOVO: Referência para o Particle System
+    [SerializeField] private ParticleSystem gasParticles;
 
     void Start()
     {
         player = GameObject.FindWithTag("Player");
         Debug.Log("Começou");
         InicialDamagePeriod = DamagePeriod;
+
+        // Opcional: Garante que o efeito comece desligado
+        if (gasParticles != null)
+        {
+            gasParticles.Stop();
+        }
     }
 
     void Update()
@@ -29,15 +38,11 @@ public class GameController : MonoBehaviour
         {
             InGasTime += Time.deltaTime;
             GasTimer();
-
             if (InGasTime >= DamagePeriod)
             {
                 Debug.Log("Passou " + InicialDamagePeriod + " Segundos...........................");
-                
-                // PEGA A REFERÊNCIA DO SCRIPT MOVE
                 Move moveScript = player.GetComponent<Move>();
-
-                // ALTERAÇÃO AQUI: Só toma dano se não estiver escondido E não estiver imune ao gás!
+                
                 if (moveScript.IsHide == false && moveScript.IsImmuneToGas == false)
                 {
                     player.GetComponent<HP>().perderHP(1);
@@ -47,7 +52,6 @@ public class GameController : MonoBehaviour
                 {
                     Debug.Log("Player está imune ao gás!");
                 }
-
                 DamagePeriod += InicialDamagePeriod;
             }
         }
@@ -59,20 +63,31 @@ public class GameController : MonoBehaviour
         {
             Gas();
         }
+        
+        // Modificado: Quando o tempo do gás acaba
         if (InGasTime >= GasDuration)
         {
             GasTime = 0f;
             GasTimerOn = true;
             InGasTime = 0f;
             DamagePeriod = InicialDamagePeriod;
+
+            // Desativa partículas quando o gás some
+            if (gasParticles != null)
+            {
+                gasParticles.Stop();
+            }
         }
     }
 
     void Gas()
     {
+        // Ativar as partículas apenas no momento exato em que o gás liga
+        if (GasTimerOn == true && gasParticles != null)
+        {
+            gasParticles.Play();
+        }
+
         GasTimerOn = false;
     }
 }
-
-
-
