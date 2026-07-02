@@ -31,6 +31,13 @@ public class HP : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+   void Update()
+   {
+       if (HPAtual <= 0)
+        {
+            Morrer();
+        }
+   }
     public void UpdateRespawnPoint(Vector2 newPosition)
     {
         respawnPoint = newPosition;
@@ -43,10 +50,7 @@ public class HP : MonoBehaviour
         HPAtual = Mathf.Max(0, HPAtual - QuantidadedeDano);
         AtualizarUI();
 
-        if (HPAtual <= 0)
-        {
-            Morrer();
-        }
+        
     }
 
     void AtualizarUI()
