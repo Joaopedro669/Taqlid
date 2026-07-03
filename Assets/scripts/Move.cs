@@ -10,7 +10,7 @@ public class Move : MonoBehaviour
     private Vector2 moveInput;
     private Rigidbody2D rb;
 
-    [SerializeField] private float speed = 17;
+    [SerializeField] public float speed = 17;
     [SerializeField] private float jforce = 10;
     private Transform ground_pivot;
     [SerializeField] private LayerMask ground_layer;
@@ -122,8 +122,8 @@ public class Move : MonoBehaviour
         Debug.DrawRay(wallDetectorFoot.position, Vector2.left * laserLength, hitFootL.collider ? Color.green : Color.red);
 
         // Retorna verdadeiro se QUALQUER um dos 6 lasers encontrar o bloco correto
-        return (hitHeadR.collider != null || hitCenterR.collider != null || hitFootR.collider != null ||
-                hitHeadL.collider != null || hitCenterL.collider != null || hitFootL.collider != null);
+        return ( (hitHeadR.collider != null && hitCenterR.collider != null && hitFootR.collider != null) ||
+                (hitHeadL.collider != null && hitCenterL.collider != null && hitFootL.collider != null));
     }
 
     void ToggleGasImmunity(bool ativar)
