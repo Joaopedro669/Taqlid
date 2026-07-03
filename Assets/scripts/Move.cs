@@ -10,7 +10,7 @@ public class Move : MonoBehaviour
     private Vector2 moveInput;
     private Rigidbody2D rb;
 
-    [SerializeField] private float speed = 17;
+    [SerializeField] public float speed = 17;
     [SerializeField] private float jforce = 10;
     private Transform ground_pivot;
     [SerializeField] private LayerMask ground_layer;
