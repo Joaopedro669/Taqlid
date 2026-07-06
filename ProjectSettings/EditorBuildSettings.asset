@@ -17,5 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/vitoria.unity
+    guid: 3942cf7c80b498741a1897e639e8c963
   m_configObjects: {}
-  m_UseUCBPForAssetBundles: 0
