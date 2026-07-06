@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI; // NOVO: Linha adicionada para a Unity aceitar imagens na UI
 
 public class HP : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class HP : MonoBehaviour
     [Header("Componentes de UI")]
     public TextMeshProUGUI textoHP;
     public TextMeshProUGUI textoVidas;
+    public Image barraPreenchimentoHP; // NOVO: Caixinha onde vamos arrastar a barra vermelha
 
     void Start()
     {
@@ -31,13 +33,13 @@ public class HP : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-   void Update()
-   {
-       if (HPAtual <= 0)
+    void Update()
+    {
+        if (HPAtual <= 0)
         {
             Morrer();
         }
-   }
+    }
     public void UpdateRespawnPoint(Vector2 newPosition)
     {
         respawnPoint = newPosition;
@@ -49,8 +51,6 @@ public class HP : MonoBehaviour
 
         HPAtual = Mathf.Max(0, HPAtual - QuantidadedeDano);
         AtualizarUI();
-
-        
     }
 
     void AtualizarUI()
@@ -63,6 +63,12 @@ public class HP : MonoBehaviour
         if (textoVidas != null)
         {
             textoVidas.text = "Vidas Extras: " + vidasExtrasAtuais;
+        }
+
+        // NOVO: Faz a barra vermelha encolher baseada na conta (Vida Atual dividida pela Vida Máxima)
+        if (barraPreenchimentoHP != null)
+        {
+            barraPreenchimentoHP.fillAmount = (float)HPAtual / HPTotal;
         }
     }
 
