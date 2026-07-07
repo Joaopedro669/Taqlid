@@ -112,6 +112,6 @@ public class HP : MonoBehaviour
     void GameOver()
     {
         Debug.Log("Game Over!");
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Derrota");
     }
 }

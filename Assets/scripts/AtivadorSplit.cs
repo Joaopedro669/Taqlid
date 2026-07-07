@@ -15,8 +15,7 @@ public class AtivadorSplit : MonoBehaviour
                 playerAnim.SetTrigger("ativar_split");
             }
 
-            // Opcional: Destrói esta área para a animação só acontecer UMA vez no jogo
-            Destroy(gameObject);
+            
         }
     }
 }
