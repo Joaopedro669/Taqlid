@@ -9,13 +9,29 @@ public class GameController : MonoBehaviour
     [SerializeField] private float GasDuration = 30f;
     [SerializeField] private float DamagePeriod = 10f;
     [SerializeField] private float InicialDamagePeriod = 0f;
-    private GameObject player; 
+    private GameObject player;
+
+    // REFERÊNCIA ATUALIZADA: Agora controlamos o objeto do gás por inteiro
+    [SerializeField] private ParticleSystem gasParticles;
+
+    [Header("Configurações de Áudio do Gás")]
+    [SerializeField] private AudioSource somSirene;
+    [SerializeField] private AudioSource somGas;
 
     void Start()
     {
         player = GameObject.FindWithTag("Player");
         Debug.Log("Começou");
         InicialDamagePeriod = DamagePeriod;
+
+        // CORREÇÃO: Em vez de usar .Stop(), desligamos o objeto visual para garantir que suma no início
+        if (gasParticles != null)
+        {
+            gasParticles.gameObject.SetActive(false);
+        }
+
+        if (somSirene != null) somSirene.Stop();
+        if (somGas != null) somGas.Stop();
     }
 
     void Update()
@@ -29,15 +45,11 @@ public class GameController : MonoBehaviour
         {
             InGasTime += Time.deltaTime;
             GasTimer();
-
             if (InGasTime >= DamagePeriod)
             {
                 Debug.Log("Passou " + InicialDamagePeriod + " Segundos...........................");
-                
-                // PEGA A REFERÊNCIA DO SCRIPT MOVE
                 Move moveScript = player.GetComponent<Move>();
 
-                // ALTERAÇÃO AQUI: Só toma dano se não estiver escondido E não estiver imune ao gás!
                 if (moveScript.IsHide == false && moveScript.IsImmuneToGas == false)
                 {
                     player.GetComponent<HP>().perderHP(1);
@@ -47,7 +59,6 @@ public class GameController : MonoBehaviour
                 {
                     Debug.Log("Player está imune ao gás!");
                 }
-
                 DamagePeriod += InicialDamagePeriod;
             }
         }
@@ -59,20 +70,39 @@ public class GameController : MonoBehaviour
         {
             Gas();
         }
+
         if (InGasTime >= GasDuration)
         {
             GasTime = 0f;
             GasTimerOn = true;
             InGasTime = 0f;
             DamagePeriod = InicialDamagePeriod;
+
+            // CORREÇÃO: Desativa o objeto inteiro do gás quando o tempo acaba
+            if (gasParticles != null)
+            {
+                gasParticles.gameObject.SetActive(false);
+            }
+
+            if (somGas != null)
+            {
+                somGas.Stop();
+            }
         }
     }
 
     void Gas()
     {
+        if (GasTimerOn == true && gasParticles != null)
+        {
+            // CORREÇÃO: Liga o objeto do gás primeiro, e depois dá o Play nas partículas
+            gasParticles.gameObject.SetActive(true);
+            gasParticles.Play();
+
+            if (somSirene != null) somSirene.Play();
+            if (somGas != null) somGas.Play();
+        }
+
         GasTimerOn = false;
     }
 }
-
-
-

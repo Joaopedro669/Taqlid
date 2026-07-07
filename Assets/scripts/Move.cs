@@ -19,6 +19,9 @@ public class Move : MonoBehaviour
     private GameObject Hide;
     public bool IsHide = false;
 
+    public bool ismoving = false;
+    public AudioSource audio;
+
     // Variável para controlar a imunidade ao gás
     public bool IsImmuneToGas = false; 
 
@@ -93,6 +96,24 @@ public class Move : MonoBehaviour
         if (IsImmuneToGas && !DetectarBlocoProtecao())
         {
             ToggleGasImmunity(false);
+        }
+
+        if (moveInput.x != 0)
+        {
+            ismoving = true;
+        }
+        else
+        {
+            ismoving = false;
+        }
+
+        if (ismoving && audio.isPlaying == false && detectGround() == true)
+        {
+            audio.Play();
+        }
+        else if (ismoving == false || detectGround() == false)
+        {
+            audio.Stop();
         }
     }
 

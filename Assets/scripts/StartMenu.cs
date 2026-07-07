@@ -1,6 +1,6 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
@@ -34,9 +34,7 @@ public class StartMenu : MonoBehaviour
 
     public void ContinueGame()
     {
-        string savedScene = PlayerPrefs.GetString("checkpoint_scene", "SampleScene");
-        SceneManager.LoadScene(savedScene);
-        // O CheckpointManager reaplica a posição automaticamente ao carregar a cena
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void Config()
@@ -49,14 +47,14 @@ public class StartMenu : MonoBehaviour
         SceneManager.LoadScene("Creditos");
     }
 
+    public void ExitGame()
+    {
+        Debug.Log("O jogador fechou o jogo!");
+        Application.Quit();
+    }
+
     public void Return()
     {
         SceneManager.LoadScene("Menu");
     }
-
-    public void ExitGame()
-    {
-        Application.Quit();
-    }
 }
-
