@@ -5092,6 +5092,7 @@ MonoBehaviour:
   m_MovementSmoothing: 0.1
   IsHide: 0
   ismoving: 0
+  audio: {fileID: 2049002261}
   IsImmuneToGas: 0
   wallDetectorHead: {fileID: 0}
   wallDetectorCenter: {fileID: 0}
