@@ -1,0 +1,494 @@
+fileFormatVersion: 2
+guid: c81e169af74de194ab2c7ea011ad189a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4352835174536698374
+    second: TAQLID_TUTORIAL_BUTTON_0
+  - first:
+      213: -562628875403517771
+    second: TAQLID_TUTORIAL_BUTTON_1
+  - first:
+      213: -2141797411018930455
+    second: TAQLID_TUTORIAL_BUTTON_2
+  - first:
+      213: -7619931932322148262
+    second: TAQLID_TUTORIAL_BUTTON_3
+  - first:
+      213: 5450205311782431144
+    second: TAQLID_TUTORIAL_BUTTON_4
+  - first:
+      213: -5380213247407097549
+    second: TAQLID_TUTORIAL_BUTTON_5
+  - first:
+      213: -6143341889179264770
+    second: TAQLID_TUTORIAL_BUTTON_6
+  - first:
+      213: 5765612636776673944
+    second: TAQLID_TUTORIAL_BUTTON_7
+  - first:
+      213: 8649105043024438293
+    second: TAQLID_TUTORIAL_BUTTON_8
+  - first:
+      213: 2513301883562568169
+    second: TAQLID_TUTORIAL_BUTTON_9
+  - first:
+      213: 8645495473888992978
+    second: TAQLID_TUTORIAL_BUTTON_10
+  - first:
+      213: -8418765114129613318
+    second: TAQLID_TUTORIAL_BUTTON_11
+  - first:
+      213: 5987553250805826753
+    second: TAQLID_TUTORIAL_BUTTON_12
+  - first:
+      213: -6075402334860970211
+    second: TAQLID_TUTORIAL_BUTTON_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TAQLID_TUTORIAL_BUTTON_0
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 2389
+        width: 616
+        height: 612
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60ad5186780686c30800000000000000
+      internalID: 4352835174536698374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TAQLID_TUTORIAL_BUTTON_1
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 2596
+        width: 115
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b0223dc4042138f0800000000000000
+      internalID: -562628875403517771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TAQLID_TUTORIAL_BUTTON_2
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 2594
+        width: 100
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e68d573a9ec642e0800000000000000
+      internalID: -2141797411018930455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TAQLID_TUTORIAL_BUTTON_3
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 2594
+        width: 114
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5058499740904690800000000000000
+      internalID: -7619931932322148262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TAQLID_TUTORIAL_BUTTON_4
+      rect:
+        serializedVersion: 2
+        x: 1258
+        y: 2594
+        width: 139
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a92db9cad403ab40800000000000000
+      internalID: 5450205311782431144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TAQLID_TUTORIAL_BUTTON_5
+      rect:
+        serializedVersion: 2
+        x: 1425
+        y: 2596
+        width: 122
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 339f27c9e84a555b0800000000000000
+      internalID: -5380213247407097549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TAQLID_TUTORIAL_BUTTON_6
+      rect:
+        serializedVersion: 2
+        x: 1573
+        y: 2594
+        width: 129
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef851b1c9177ebaa0800000000000000
+      internalID: -6143341889179264770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TAQLID_TUTORIAL_BUTTON_7
+      rect:
+        serializedVersion: 2
+        x: 1731
+        y: 2594
+        width: 131
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 892b3974522930050800000000000000
+      internalID: 5765612636776673944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TAQLID_TUTORIAL_BUTTON_8
+      rect:
+        serializedVersion: 2
+        x: 1889
+        y: 2596
+        width: 82
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 514e282363bc70870800000000000000
+      internalID: 8649105043024438293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TAQLID_TUTORIAL_BUTTON_9
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 1867
+        width: 1378
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e9211f3fba01e220800000000000000
+      internalID: 2513301883562568169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TAQLID_TUTORIAL_BUTTON_10
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 1968
+        width: 164
+        height: 253
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2de9664e358faf770800000000000000
+      internalID: 8645495473888992978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TAQLID_TUTORIAL_BUTTON_11
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 1965
+        width: 158
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afd7ad4bbb98a2b80800000000000000
+      internalID: -8418765114129613318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TAQLID_TUTORIAL_BUTTON_12
+      rect:
+        serializedVersion: 2
+        x: 2029
+        y: 1968
+        width: 37
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c4440c45ff081350800000000000000
+      internalID: 5987553250805826753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TAQLID_TUTORIAL_BUTTON_13
+      rect:
+        serializedVersion: 2
+        x: 2105
+        y: 1965
+        width: 181
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d17780be3c5dfaba0800000000000000
+      internalID: -6075402334860970211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TAQLID_TUTORIAL_BUTTON_0: 4352835174536698374
+      TAQLID_TUTORIAL_BUTTON_1: -562628875403517771
+      TAQLID_TUTORIAL_BUTTON_10: 8645495473888992978
+      TAQLID_TUTORIAL_BUTTON_11: -8418765114129613318
+      TAQLID_TUTORIAL_BUTTON_12: 5987553250805826753
+      TAQLID_TUTORIAL_BUTTON_13: -6075402334860970211
+      TAQLID_TUTORIAL_BUTTON_2: -2141797411018930455
+      TAQLID_TUTORIAL_BUTTON_3: -7619931932322148262
+      TAQLID_TUTORIAL_BUTTON_4: 5450205311782431144
+      TAQLID_TUTORIAL_BUTTON_5: -5380213247407097549
+      TAQLID_TUTORIAL_BUTTON_6: -6143341889179264770
+      TAQLID_TUTORIAL_BUTTON_7: 5765612636776673944
+      TAQLID_TUTORIAL_BUTTON_8: 8649105043024438293
+      TAQLID_TUTORIAL_BUTTON_9: 2513301883562568169
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
