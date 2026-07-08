@@ -7,7 +7,7 @@ public class Move : MonoBehaviour
     private InputAction move;
     private InputAction jump;
     private InputAction interact;
-    private Vector2 moveInput;
+    public Vector2 moveInput;
     private Rigidbody2D rb;
 
     [SerializeField] public float speed = 17;
