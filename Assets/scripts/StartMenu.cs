@@ -17,8 +17,12 @@ public class StartMenu : MonoBehaviour
         continueButton.onClick.AddListener(ContinueGame);
         configButton.onClick.AddListener(Config);
         creditsButton.onClick.AddListener(Credits);
-        exitButton.onClick.AddListener(ExitGame);
-        returnButton.onClick.AddListener(Return);
+
+        // COMENTADO: Desativado para o botão Sair não fechar o jogo direto antes da hora
+        // exitButton.onClick.AddListener(ExitGame);
+
+        // COMENTADO: Desativado para sumir com o erro vermelho do botão que não existe no seu menu
+        // returnButton.onClick.AddListener(Return);
 
         // Desativa "Continuar" se não houver save
         bool hasSave = PlayerPrefs.GetInt("checkpoint_exists", 0) == 1;
