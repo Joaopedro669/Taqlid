@@ -5,8 +5,8 @@ public class PlayerAnimation : MonoBehaviour
     private Animator anim;
     private Move moveScript;
     private Rigidbody2D rb;
+    private Vector2 movedir;
     private bool viradoParaDireita = true;
-    public Vector2 movedir;
 
     void Start()
     {
@@ -18,37 +18,39 @@ public class PlayerAnimation : MonoBehaviour
     void Update()
     {
         float velocidadeX = rb.linearVelocity.x;
-        movedir = GetComponent<Move>().moveInput;
-        /*
+        movedir = moveScript.moveInput;
+
         if (Mathf.Abs(velocidadeX) < 0.1f)
         {
             velocidadeX = 0f;
-        }*/
-        Debug.Log(movedir.x);
+        }
 
-        anim.SetFloat("direction_horizontal", velocidadeX);
-        anim.SetBool("is_hiding", moveScript.IsImmuneToGas);
+        // O Mathf.Abs transforma o -17 de andar para a esquerda em +17, ativando o andar padrão!
+        anim.SetFloat("direction_horizontal", Mathf.Abs(velocidadeX));
+        anim.SetBool("is_hiding", moveScript.IsImmuneToGas || moveScript.IsHide);
         anim.SetFloat("vertical_velocity", rb.linearVelocity.y);
 
-        // Sistema de Giro (Flip)
-        // Só gira se o personagem NÃO estiver escondido
-        if (!moveScript.IsImmuneToGas)
+        bool escondido = moveScript.IsImmuneToGas || moveScript.IsHide;
+
+        if (!escondido)
         {
-            if (movedir.x > 0f)
+            if (movedir.x > 0.1f && !viradoParaDireita)
             {
-                viradoParaDireita = true;
+                GirarObjeto();
             }
-            else if (movedir.x < 0f)
+            else if (movedir.x < -0.1f && viradoParaDireita)
             {
-                viradoParaDireita = false;
+                GirarObjeto();
             }
-            GirarObjeto();
         }
     }
 
     void GirarObjeto()
     {
-        // Inverte a escala X do personagem para espelhar ele e todas as animações
-        GetComponent<SpriteRenderer>().flipX = viradoParaDireita;
+        viradoParaDireita = !viradoParaDireita;
+
+        Vector3 escala = transform.localScale;
+        escala.x *= -1;
+        transform.localScale = escala;
     }
 }

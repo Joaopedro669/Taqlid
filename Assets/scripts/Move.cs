@@ -15,7 +15,7 @@ public class Move : MonoBehaviour
     private Transform ground_pivot;
     [SerializeField] private LayerMask ground_layer;
     private Vector2 m_Velocity = Vector2.zero;
-    [SerializeField] [Range(0.05f, 0.3f)] private float m_MovementSmoothing = 0.1f;
+    [SerializeField][Range(0.05f, 0.3f)] private float m_MovementSmoothing = 0.1f;
     private GameObject Hide;
     public bool IsHide = false;
 
@@ -23,7 +23,7 @@ public class Move : MonoBehaviour
     public AudioSource audio;
 
     // Variável para controlar a imunidade ao gás
-    public bool IsImmuneToGas = false; 
+    public bool IsImmuneToGas = false;
 
     [Header("Configurações dos Lasers de Parede")]
     [SerializeField] private Transform wallDetectorHead;   // Arraste o objeto da Cabeça aqui
@@ -69,7 +69,7 @@ public class Move : MonoBehaviour
     void Update()
     {
         moveInput = move.ReadValue<Vector2>();
-        
+
         if (jump.WasPressedThisFrame() == true && detectGround() == true && canJump == true)
         {
             jump_action();
@@ -120,7 +120,6 @@ public class Move : MonoBehaviour
     // Função que dispara os 3 pares de lasers (Cabeça, Centro e Pé)
     private bool DetectarBlocoProtecao()
     {
-        // Garante que os componentes foram atribuídos no Inspector para evitar erros
         if (wallDetectorHead == null || wallDetectorCenter == null || wallDetectorFoot == null) return false;
 
         // Dispara raios para a Direita a partir dos 3 pontos
@@ -133,18 +132,19 @@ public class Move : MonoBehaviour
         RaycastHit2D hitCenterL = Physics2D.Raycast(wallDetectorCenter.position, Vector2.left, laserLength, blocoProtecaoLayer);
         RaycastHit2D hitFootL = Physics2D.Raycast(wallDetectorFoot.position, Vector2.left, laserLength, blocoProtecaoLayer);
 
-        // Desenha os lasers visuais na aba Scene (Verde se bater no bloco, Vermelho se não bater)
+        // Desenha os lasers visuais na aba Scene
         Debug.DrawRay(wallDetectorHead.position, Vector2.right * laserLength, hitHeadR.collider ? Color.green : Color.red);
         Debug.DrawRay(wallDetectorCenter.position, Vector2.right * laserLength, hitCenterR.collider ? Color.green : Color.red);
         Debug.DrawRay(wallDetectorFoot.position, Vector2.right * laserLength, hitFootR.collider ? Color.green : Color.red);
-        
+
         Debug.DrawRay(wallDetectorHead.position, Vector2.left * laserLength, hitHeadL.collider ? Color.green : Color.red);
         Debug.DrawRay(wallDetectorCenter.position, Vector2.left * laserLength, hitCenterL.collider ? Color.green : Color.red);
         Debug.DrawRay(wallDetectorFoot.position, Vector2.left * laserLength, hitFootL.collider ? Color.green : Color.red);
 
-        // Retorna verdadeiro se QUALQUER um dos 6 lasers encontrar o bloco correto
-        return ( (hitHeadR.collider != null && hitCenterR.collider != null && hitFootR.collider != null) ||
-                (hitHeadL.collider != null && hitCenterL.collider != null && hitFootL.collider != null));
+        // CORREÇÃO CRUCIAL: Trocado && (E) por || (OU). 
+        // Agora, se QUALQUER um dos raios encostar na caixa verde, o esconderijo funciona!
+        return (hitHeadR.collider != null || hitCenterR.collider != null || hitFootR.collider != null ||
+                hitHeadL.collider != null || hitCenterL.collider != null || hitFootL.collider != null);
     }
 
     void ToggleGasImmunity(bool ativar)
@@ -188,6 +188,3 @@ public class Move : MonoBehaviour
 
     void Esconder() { }
 }
-
-
-

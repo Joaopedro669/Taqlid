@@ -493,8 +493,8 @@ MonoBehaviour:
   continueButton: {fileID: 1509690821}
   configButton: {fileID: 510918998}
   creditsButton: {fileID: 187768147}
-  exitButton: {fileID: 0}
-  returnButton: {fileID: 0}
+  exitButton: {fileID: 1719838745}
+  returnButton: {fileID: 1509690821}
 --- !u!1 &251526181
 GameObject:
   m_ObjectHideFlags: 0
