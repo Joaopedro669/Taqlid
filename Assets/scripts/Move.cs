@@ -186,5 +186,13 @@ public class Move : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.transform.tag == "spring")
+        {
+            rb.AddForce(transform.up * jforce * 1.8f, ForceMode2D.Impulse);
+        }
+    }
+
     void Esconder() { }
 }
